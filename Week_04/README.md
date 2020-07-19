@@ -79,3 +79,33 @@ def dfs(node, visited):
 ---
 
 ## 二分查找
+
+要使用二分查找，需要满足三个前提条件：
+
+1. 目标函数必须是单调的，如数组必须是有序的
+2. 必须存在上下界，比如数组个数是有限的
+3. 元素必须可以通过下标来访问
+
+在使用时必须严格审视问题是否满足上述的条件，注意不要将自己的思路局限在经典的二分查找，还有其他的问题也可以使用二分查找，比如：
+
+1. [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
+2. [X的平方根](https://leetcode-cn.com/problems/sqrtx/)
+
+上面的题目可以提供更宽广的使用二分查找的视角
+
+### 二分查找的实现
+
+下面是二分查找的代码模板：
+
+```pyhon
+left, right = 0, len(array) - 1 
+while left <= right: 
+	  mid = (left + right) / 2 
+	  if array[mid] == target: 
+		    # find the target!! 
+		    break or return result 
+	  elif array[mid] < target: 
+		    left = mid + 1 
+	  else: 
+		    right = mid - 1
+```
